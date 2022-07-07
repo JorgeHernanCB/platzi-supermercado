@@ -12,4 +12,8 @@ public class ProductoRepository {
     public List<Producto> getAll(){
         return (List<Producto>) crudRepository.findAll();
     }
+
+    public List<Producto> getByCategoria(int idCategoria){
+        return crudRepository.findByIdCategoria(idCategoria);
+    }
 }
