@@ -39,6 +39,20 @@
 			<version>21.6.0.0.1</version>
 		</dependency>
 
+		<!-- Swagger 3.0 -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+
+		<!-- Swagger 3.0 -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-webflux-ui</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

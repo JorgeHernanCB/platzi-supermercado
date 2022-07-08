@@ -8,23 +8,23 @@ import java.util.List;
 public class Cliente {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "\"id_cliente\"")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
-    @Column(name = "nombre")
+    @Column(name = "\"nombre\"")
     private String nombre;
 
-    @Column(name = "apellidos")
+    @Column(name = "\"apellidos\"")
     private String apellidos;
 
-    @Column(name = "celular")
+    @Column(name = "\"celular\"")
     private long celular;
 
-    @Column(name = "direccion")
+    @Column(name = "\"direccion\"")
     private String direccion;
 
-    @Column(name = "correo_electronico")
+    @Column(name = "\"correo_electronico\"")
     private String correo_electronico;
 
     // Relacion entre tablas

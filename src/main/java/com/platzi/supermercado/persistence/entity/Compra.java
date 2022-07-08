@@ -2,29 +2,30 @@ package com.platzi.supermercado.persistence.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "compras")
 public class Compra {
 
     @Id
-    @Column(name = "id_compra")
+    @Column(name = "\"id_compra\"")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idCompra;
 
     @Column(name = "id_cliente")
     private String idCliente;
 
-    @Column(name = "fecha")
+    @Column(name = "\"fecha\"")
     private LocalDateTime fecha;
 
-    @Column(name = "medio_pago")
+    @Column(name = "\"medio_pago\"")
     private String medioPago;
 
-    @Column(name = "comentario")
+    @Column(name = "\"comentario\"")
     private String comentario;
 
-    @Column(name = "estado")
+    @Column(name = "\"estado\"")
     private String estado;
 
     // Relaciones entre tablas
@@ -32,6 +33,9 @@ public class Compra {
     @ManyToOne
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente clientes;
+
+    @OneToMany(mappedBy = "producto")
+    private List<ComprasProducto> productos;
 
     // Getter and Setter
 

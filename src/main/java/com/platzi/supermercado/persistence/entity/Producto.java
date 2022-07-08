@@ -1,6 +1,7 @@
 package com.platzi.supermercado.persistence.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
@@ -8,44 +9,44 @@ import java.util.List;
 public class Producto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_producto")
-    private long idProducto;
-
-    @Column(name="nombre")
+    @NotBlank
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "\"id_producto\"")
+    private Long idProducto;
+    @Basic
+    @Column(name = "\"nombre\"")
     private String nombre;
 
-    @Column(name="id_categoria")
-    private long idCategoria;
-
-    @Column(name="codigo_barras")
+    @Column(name = "\"id_categoria\"")
+    private Long idCategoria;
+    @Basic
+    @Column(name = "\"codigo_barras\"")
     private String codigoBarras;
-
-    @Column(name="precio_venta")
-    private Double precioVenta;
-
-    @Column(name="cantidad_stock")
-    private long cantidadStock;
-
-    @Column(name="estado")
+    @Basic
+    @Column(name = "\"precio_venta\"")
+    private Long precioVenta;
+    @Basic
+    @Column(name = "\"cantidad_stock\"")
+    private Long cantidadStock;
+    @Basic
+    @Column(name = "\"estado\"")
     private Integer estado;
+
 
     // Relaciones entre tablas
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    @JoinColumn(name = "\"id_categoria\"", insertable = false, updatable = false)
     private Categoria categoria;
 
-    @OneToMany(mappedBy = "producto")
-    private List<ComprasProducto> productos;
 
     // Metodos Getters y Setters
 
-    public long getIdProducto() {
+    public Long getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(long idProducto) {
+    public void setIdProducto(Long idProducto) {
         this.idProducto = idProducto;
     }
 
@@ -57,11 +58,11 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public long getIdCategoria() {
+    public Long getIdCategoria() {
         return idCategoria;
     }
 
-    public void setIdCategoria(long idCategoria) {
+    public void setIdCategoria(Long idCategoria) {
         this.idCategoria = idCategoria;
     }
 
@@ -73,19 +74,19 @@ public class Producto {
         this.codigoBarras = codigoBarras;
     }
 
-    public Double getPrecioVenta() {
+    public Long getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(Double precioVenta) {
+    public void setPrecioVenta(Long precioVenta) {
         this.precioVenta = precioVenta;
     }
 
-    public long getCantidadStock() {
+    public Long getCantidadStock() {
         return cantidadStock;
     }
 
-    public void setCantidadStock(long cantidadStock) {
+    public void setCantidadStock(Long cantidadStock) {
         this.cantidadStock = cantidadStock;
     }
 
@@ -96,4 +97,13 @@ public class Producto {
     public void setEstado(Integer estado) {
         this.estado = estado;
     }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
 }

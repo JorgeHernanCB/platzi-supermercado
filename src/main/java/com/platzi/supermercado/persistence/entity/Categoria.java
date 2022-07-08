@@ -4,18 +4,17 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "categorias")
+@Table(name = "categorias", schema = "platzi")
 public class Categoria {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_categoria")
+    @Column(name = "\"id_categoria\"")
     private long idCategoria;
 
-    @Column(name = "descripcion")
+    @Column(name = "\"descripcion\"")
     private String descripcion;
 
-    @Column(name = "estado")
+    @Column(name = "\"estado\"")
     private Integer estado;
 
     // Relaciones entre tablas

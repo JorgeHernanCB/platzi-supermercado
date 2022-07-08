@@ -3,19 +3,19 @@ package com.platzi.supermercado.persistence.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "compras_prodcutos")
+@Table(name = "compras_productos")
 public class ComprasProducto {
 
     @EmbeddedId
     private ComprasProductoPK id;
 
-    @Column(name = "cantidad")
+    @Column(name = "\"cantidad\"")
     private Integer cantidad;
 
-    @Column(name = "total")
+    @Column(name = "\"total\"")
     private Double total;
 
-    @Column(name = "estado")
+    @Column(name = "\"estado\"")
     private Integer estado;
 
     //Relacion entreablas
